@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innovation Dashboard 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .glass {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        .metric-pill {
+            @apply px-3 py-1 rounded-full text-xs font-semibold;
+        }
+        .persona-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+        .persona-card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen font-sans text-gray-900">
+
+    <nav class="bg-slate-900 text-white p-6 shadow-xl sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold tracking-tight">Market Intelligence <span class="text-blue-400">2026</span></h1>
+            <div class="flex space-x-6">
+                <button onclick="showTab('products')" class="tab-btn text-blue-400 font-bold hover:text-blue-300 transition">Products</button>
+                <button onclick="showTab('personas')" class="tab-btn hover:text-blue-400 transition">Personas</button>
+                <button onclick="showTab('gemini')" class="tab-btn hover:text-blue-400 transition">Gemini 2.0</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto p-4 md:p-8">
+        
+        <!-- PRODUCT IDEAS SECTION -->
+        <section id="products" class="tab-content active">
+            <header class="mb-10">
+                <h2 class="text-3xl font-extrabold text-slate-800">Dutch Oven Innovation Suite</h2>
+                <p class="text-gray-600 mt-2">Strategic concepts designed to address specific Reddit-sourced consumer frustrations.</p>
+            </header>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Aero-Cast -->
+                <div class="glass p-6 rounded-2xl shadow-lg border-t-4 border-blue-500 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-bold">The Aero-Cast</h3>
+                            <span class="bg-blue-100 text-blue-800 metric-pill">Premium Tech</span>
+                        </div>
+                        <p class="text-sm text-gray-600 mb-4 italic">"Performance without the weight."</p>
+                        <ul class="space-y-2 text-sm text-gray-700 mb-4">
+                            <li>• 35% Lighter Nitrogen-Iron</li>
+                            <li>• Smart Bluetooth Lid Knob</li>
+                        </ul>
+                        <button onclick="showTab('personas'); openPersona('bifl')" class="text-xs text-blue-600 font-bold hover:underline">Target: The BIFL Collector →</button>
+                    </div>
+                    <button onclick="toggleDetails('aero-details')" class="mt-6 w-full py-2 bg-slate-100 hover:bg-slate-200 rounded-lg text-sm font-medium transition">Market Metrics</button>
+                    <div id="aero-details" class="hidden mt-4 pt-4 border-t text-xs space-y-2 text-gray-600">
+                        <div class="flex justify-between"><span>Market Size:</span><span class="font-bold text-slate-900">$135M</span></div>
+                        <div class="flex justify-between"><span>Target Price:</span><span class="font-bold text-slate-900">$225 - $265</span></div>
+                        <div class="flex justify-between"><span>ODM Cost (CN):</span><span class="font-bold text-green-600">$45 - $60</span></div>
+                    </div>
+                </div>
+
+                <!-- Transformer-Base -->
+                <div class="glass p-6 rounded-2xl shadow-lg border-t-4 border-purple-500 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-bold">Transformer-Base</h3>
+                            <span class="bg-purple-100 text-purple-800 metric-pill">Space Saver</span>
+                        </div>
+                        <p class="text-sm text-gray-600 mb-4 italic">"One footprint, total modularity."</p>
+                        <ul class="space-y-2 text-sm text-gray-700 mb-4">
+                            <li>• Modular 4qt to 7qt Rings</li>
+                            <li>• Reversible "Lid-Skillet"</li>
+                        </ul>
+                        <button onclick="showTab('personas'); openPersona('urban')" class="text-xs text-purple-600 font-bold hover:underline">Target: The Urban Dweller →</button>
+                    </div>
+                    <button onclick="toggleDetails('trans-details')" class="mt-6 w-full py-2 bg-slate-100 hover:bg-slate-200 rounded-lg text-sm font-medium transition">Market Metrics</button>
+                    <div id="trans-details" class="hidden mt-4 pt-4 border-t text-xs space-y-2 text-gray-600">
+                        <div class="flex justify-between"><span>Market Size:</span><span class="font-bold text-slate-900">$160M</span></div>
+                        <div class="flex justify-between"><span>Target Price:</span><span class="font-bold text-slate-900">$145 - $175</span></div>
+                        <div class="flex justify-between"><span>ODM Cost (CN):</span><span class="font-bold text-green-600">$28 - $38</span></div>
+                    </div>
+                </div>
+
+                <!-- The Obsidian -->
+                <div class="glass p-6 rounded-2xl shadow-lg border-t-4 border-slate-800 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-bold">The Obsidian</h3>
+                            <span class="bg-gray-200 text-slate-800 metric-pill">Indestructible</span>
+                        </div>
+                        <p class="text-sm text-gray-600 mb-4 italic">"The last pot you'll ever buy."</p>
+                        <ul class="space-y-2 text-sm text-gray-700 mb-4">
+                            <li>• 900°F Obsidian-Glass Coating</li>
+                            <li>• Retractable "Camp-Fire" Legs</li>
+                        </ul>
+                        <button onclick="showTab('personas'); openPersona('warrior')" class="text-xs text-slate-700 font-bold hover:underline">Target: The Weekend Warrior →</button>
+                    </div>
+                    <button onclick="toggleDetails('obsidian-details')" class="mt-6 w-full py-2 bg-slate-100 hover:bg-slate-200 rounded-lg text-sm font-medium transition">Market Metrics</button>
+                    <div id="obsidian-details" class="hidden mt-4 pt-4 border-t text-xs space-y-2 text-gray-600">
+                        <div class="flex justify-between"><span>Market Size:</span><span class="font-bold text-slate-900">$85M</span></div>
+                        <div class="flex justify-between"><span>Target Price:</span><span class="font-bold text-slate-900">$185 - $215</span></div>
+                        <div class="flex justify-between"><span>ODM Cost (CN):</span><span class="font-bold text-green-600">$42 - $55</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PERSONAS SECTION -->
+        <section id="personas" class="tab-content">
+            <header class="mb-10">
+                <h2 class="text-3xl font-extrabold text-slate-800">Target Personas</h2>
+                <p class="text-gray-600 mt-2">Click a persona to view deep-dive pain points and Reddit-driven insights.</p>
+            </header>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <!-- BIFL -->
+                <div onclick="openPersona('bifl')" class="persona-card glass p-6 rounded-2xl border-l-4 border-blue-500">
+                    <h3 class="font-bold text-lg">The BIFL Collector</h3>
+                    <p class="text-xs text-gray-500">Buy It For Life</p>
+                </div>
+                <!-- Weekend Warrior -->
+                <div onclick="openPersona('warrior')" class="persona-card glass p-6 rounded-2xl border-l-4 border-orange-500">
+                    <h3 class="font-bold text-lg">Weekend Warrior</h3>
+                    <p class="text-xs text-gray-500">The Hobbyist Braiser</p>
+                </div>
+                <!-- Pragmatist -->
+                <div onclick="openPersona('pragmatist')" class="persona-card glass p-6 rounded-2xl border-l-4 border-green-500">
+                    <h3 class="font-bold text-lg">Practical Pragmatist</h3>
+                    <p class="text-xs text-gray-500">Utility First</p>
+                </div>
+                <!-- Urban -->
+                <div onclick="openPersona('urban')" class="persona-card glass p-6 rounded-2xl border-l-4 border-purple-500">
+                    <h3 class="font-bold text-lg">Urban Dweller</h3>
+                    <p class="text-xs text-gray-500">Small Space Gourmet</p>
+                </div>
+            </div>
+
+            <!-- Persona Detail Display -->
+            <div id="persona-detail-box" class="mt-8 hidden animate-in fade-in slide-in-from-bottom-4 duration-300">
+                <div class="glass p-8 rounded-3xl border border-slate-200 shadow-2xl relative">
+                    <button onclick="document.getElementById('persona-detail-box').classList.add('hidden')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">✕</button>
+                    <div id="persona-content">
+                        <!-- Dynamic Content Inject -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GEMINI 2.0 SECTION -->
+        <section id="gemini" class="tab-content">
+            <!-- (Content remains same as previous version for consistency) -->
+            <div class="bg-gradient-to-r from-blue-600 to-indigo-700 rounded-3xl p-8 text-white shadow-2xl mb-8">
+                <h2 class="text-4xl font-black mb-2">Gemini 2.0 Flash</h2>
+                <p class="text-blue-100 text-lg">The Agentic Era Highlights via CNET 2026</p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="glass p-6 rounded-2xl">
+                    <h4 class="text-lg font-bold mb-3">👁️ Project Astra & Mariner</h4>
+                    <p class="text-gray-700 text-sm leading-relaxed">Shift from "Chat" to "Agents." Project Astra uses vision for real-world analysis, while Mariner handles multi-step web tasks autonomously.</p>
+                </div>
+                <div class="glass p-6 rounded-2xl">
+                    <h4 class="text-lg font-bold mb-3">🧩 Personal Intelligence</h4>
+                    <p class="text-gray-700 text-sm leading-relaxed">Opt-in access to Workspace/Photos allows Gemini to understand personal context and specific user history.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        const personaData = {
+            'bifl': {
+                title: 'The "Buy It For Life" (BIFL) Collector',
+                color: 'blue',
+                quote: '"I want to pass this down to my grandkids."',
+                traits: ['Values heritage', 'Loves countertop appeal', 'Investment mindset'],
+                pains: ['Physical weight of traditional iron', 'Fear of chipping high-cost enamel', 'Maintenance confusion'],
+                solve: 'Aero-Cast (35% weight reduction + 50-year warranty)'
+            },
+            'warrior': {
+                title: 'The Weekend Warrior',
+                color: 'orange',
+                quote: '"Saturday is for 6-hour short rib braises."',
+                traits: ['Hobbyist foodie', 'Sourdough enthusiast', 'Science-led cooking'],
+                pains: ['Moisture loss from poor seals', 'Hard to see browning on dark enamel', 'Internal temp guesswork'],
+                solve: 'The Obsidian (Extreme heat) & Aero-Cast (Smart temp monitoring)'
+            },
+            'pragmatist': {
+                title: 'The Practical Pragmatist',
+                color: 'green',
+                quote: '"I just need a tool that works for $100."',
+                traits: ['Utilitarian', 'Skeptical of brand tax', 'Focuses on surface area'],
+                pains: ['Budget pots chipping early', 'Sloped sides reducing sear area', 'Financial waste of replacements'],
+                solve: 'Transformer-Base (Maximum versatility per dollar)'
+            },
+            'urban': {
+                title: 'The Urban Dweller',
+                color: 'purple',
+                quote: '"My kitchen is roughly 4 square feet."',
+                traits: ['Space conscious', 'Single-pan meals', 'Efficiency lover'],
+                pains: ['Storage for multiple sizes', 'Heavy pots on fragile glass stoves', 'Cluttered cabinets'],
+                solve: 'Transformer-Base (Modular rings = 60% space savings)'
+            }
+        };
+
+        function showTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('text-blue-400', 'font-bold');
+                if (btn.getAttribute('onclick').includes(tabId)) {
+                    btn.classList.add('text-blue-400', 'font-bold');
+                }
+            });
+        }
+
+        function openPersona(key) {
+            const data = personaData[key];
+            const box = document.getElementById('persona-detail-box');
+            const content = document.getElementById('persona-content');
+            
+            content.innerHTML = `
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="md:w-1/3">
+                        <div class="w-16 h-1 w-full bg-${data.color}-500 mb-4"></div>
+                        <h3 class="text-3xl font-black text-slate-900">${data.title}</h3>
+                        <p class="mt-4 italic text-gray-500">"${data.quote}"</p>
+                    </div>
+                    <div class="md:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-bold text-slate-800 border-b mb-2">Key Pain Points</h4>
+                            <ul class="text-sm text-gray-600 space-y-2">
+                                ${data.pains.map(p => `<li>• ${p}</li>`).join('')}
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-800 border-b mb-2">Ideal Solution</h4>
+                            <p class="text-sm font-bold text-${data.color}-600 bg-${data.color}-50 p-3 rounded-lg">${data.solve}</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+            box.classList.remove('hidden');
+            box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        function toggleDetails(id) {
+            const el = document.getElementById(id);
+            el.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>
